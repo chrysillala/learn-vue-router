@@ -1,4 +1,4 @@
-# 2-vue-cli
+# learn vue router with api
 
 ## Project setup
 ```
@@ -23,6 +23,7 @@ yarn lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+### Data from Amiibo api
 ```
-json-server --watch db.json
+https://www.amiiboapi.com/
 ```
