@@ -1,6 +1,6 @@
 # learn vue router with api
 
-## [Live Demo](learn-vue-router.now.sh)
+## [Live Demo](https://learn-vue-router.now.sh)
 
 ## Project setup
 ```
