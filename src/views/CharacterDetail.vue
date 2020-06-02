@@ -1,37 +1,11 @@
 <template>
   <article>
     <div class="character-detail">
-      <!-- <span class="eyebrow">{{ event.time }} on {{ event.date }}</span> -->
-      <img :src="character.image" :alt="character.name" loading="lazy">
+      <span class="ribbon">{{ character.type }}</span>
+      <img :src="character.image" :alt="character.name" loading="lazy" />
       <h1 class="title">{{ character.name }}</h1>
       <h2>{{ character.gameSeries }}</h2>
-      <!-- <h5>Organized by {{ event.organizer }}</h5> -->
-      <!-- <h5>Category: {{ event.category }}</h5> -->
     </div>
-
-    <!-- <div class="location">
-      <BaseIcon name="map"><h3 class="title">Location</h3></BaseIcon>
-      <address>{{ event.location }}</address>
-    </div>
-
-    <h3>Event Details</h3>
-    <p>{{ event.description }}</p>
-
-    <h3>
-      Attendees
-      <span class="badge -fill-gradient">{{
-        event.attendees ? event.attendees.length : 0
-      }}</span>
-    </h3>
-    <ul class="list-group">
-      <li
-        class="list-item"
-        v-for="(attendee, index) in event.attendees"
-        :key="index"
-      >
-        {{ attendee.name }}
-      </li>
-    </ul> -->
   </article>
 </template>
 
@@ -62,11 +36,32 @@ export default {
 <style scoped>
 img {
   width: 50%;
+  margin-bottom: 1rem;
 }
 .character-detail {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
+  position: relative;
+}
+.character-detail > .title {
+  margin: 0;
+}
+
+.ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #39b982;
+  padding: 0.5rem;
+  color: #fff;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
 }
 </style>

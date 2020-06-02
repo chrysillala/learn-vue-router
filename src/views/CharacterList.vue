@@ -7,12 +7,20 @@
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima, magni.
       </p>
     </MediaBox>
-    <div class="card-wrapper" v-else>
-      <CharacterCard
-        v-for="(character, index) in characters"
-        :key="index"
-        :character="character"
+    <div v-else>
+      <input
+        type="text"
+        class="search-box"
+        placeholder="search character"
+        v-model="query"
       />
+      <div class="card-wrapper">
+        <CharacterCard
+          v-for="(character, index) in searchCharacter"
+          :key="index"
+          :character="character"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -30,7 +38,8 @@ export default {
   data() {
     return {
       characters: [],
-      loading: true
+      loading: true,
+      query: ""
     }
   },
   created() {
@@ -44,6 +53,13 @@ export default {
         console.log("There was an error: " + error.response)
       })
       .finally(() => (this.loading = false))
+  },
+  computed: {
+    searchCharacter() {
+      return this.characters.filter(character =>
+        character.name.toLowerCase().includes(this.query.toLowerCase())
+      )
+    }
   }
 }
 </script>
@@ -53,5 +69,9 @@ export default {
   display: grid;
   /* grid-template-columns: repeat(8, minmax(0, 1fr)); */
   gap: 1rem;
+}
+
+.search-box {
+  margin-bottom: 1.5rem;
 }
 </style>
