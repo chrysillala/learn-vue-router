@@ -1,4 +1,4 @@
-# learn-vue-router
+# 2-vue-cli
 
 ## Project setup
 ```
@@ -22,3 +22,7 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+```
+json-server --watch db.json
+```
